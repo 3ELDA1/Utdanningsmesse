@@ -2,7 +2,7 @@
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
-var io = require('socket.io')(server);
+//var io = require('socket.io')(server);
 
 app.use(express.static(__dirname + '/static'));
 
@@ -21,6 +21,7 @@ board.on("ready", function() {
   board.repl.inject({
     button: button
   });
+
   // Button 1 down state
   button1.on("down", function() {
     console.log("B1 - down");
@@ -44,7 +45,7 @@ board.on("ready", function() {
     console.log("B1 - up");
   });
 
-  // Button 2 uo state
+  // Button 2 up state
   button2.on("up", function() {
     console.log("B2 - up");
   });
